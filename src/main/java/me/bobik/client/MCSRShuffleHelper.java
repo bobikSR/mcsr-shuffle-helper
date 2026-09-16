@@ -4,15 +4,8 @@ import com.redlimerl.speedrunigt.timer.InGameTimer;
 import net.fabricmc.api.ClientModInitializer;
 
 public class MCSRShuffleHelper implements ClientModInitializer {
-    public static boolean completed = false;
 
     @Override
     public void onInitializeClient() {
-        /*if (InGameTimer.getInstance().isCompleted())
-            completed = true;*/
-        InGameTimer.onComplete(igt -> {
-            completed = true;
-                }
-        );
     }
 }

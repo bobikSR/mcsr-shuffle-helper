@@ -1,5 +1,6 @@
 package me.bobik.mixin;
 
+import com.redlimerl.speedrunigt.timer.InGameTimer;
 import me.bobik.client.MCSRShuffleHelper;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.Screen;
@@ -22,9 +23,8 @@ public abstract class GameMenuScreenMixin extends Screen {
             ordinal = 1
     )
     private ButtonWidget disableSaveAndQuit(ButtonWidget saveButton){
-        if (MCSRShuffleHelper.completed)
-            return saveButton;
-        saveButton.active = false;
+        if (!InGameTimer.getInstance().isCompleted())
+            saveButton.active = false;
         return saveButton;
     }
 
@@ -34,9 +34,8 @@ public abstract class GameMenuScreenMixin extends Screen {
             ordinal = 0
     )
     private ButtonWidget disableOpenToLan(ButtonWidget openToLanButton){
-        if (MCSRShuffleHelper.completed)
-            return openToLanButton;
-        openToLanButton.active = false;
+        if (!InGameTimer.getInstance().isCompleted())
+            openToLanButton.active = false;
         return openToLanButton;
     }
 }
