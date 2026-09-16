@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "disablesaveandquit",
+  "id": "mcsrshufflehelper",
   "version": "${version}",
-  "name": "DisableSaveAndQuit",
+  "name": "MCSRShuffleHelper",
   "description": "",
   "authors": [],
   "contact": {},
@@ -11,17 +11,21 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "me.bobik.client.DisablesaqClient"
+      "me.bobik.client.MCSRShuffleHelper"
     ],
     "main": [
-      "me.bobik.Disablesaq"
+      "me.bobik.MCSRShuffleHelper"
     ]
   },
   "mixins": [
-    "disablesaveandquit.mixins.json"
+    "mcsr-shuffle-helper.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
-    "minecraft": "${minecraft_version}"
+    "fabricloader": ">=0.16.0",
+    "minecraft": "1.16.1"
+  },
+  "breaks": {
+    "seedqueue": ">=1.0",
+    "fast_reset": "<2.3"
   }
 }
