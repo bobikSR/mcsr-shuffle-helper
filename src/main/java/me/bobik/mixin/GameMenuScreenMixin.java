@@ -30,7 +30,7 @@ public abstract class GameMenuScreenMixin extends Screen {
 
     @ModifyVariable(
             method = "initWidgets",
-            at = @At("STORE"),
+            at = @At("TAIL"),
             ordinal = 0
     )
     private ButtonWidget disableOpenToLan(ButtonWidget openToLanButton){

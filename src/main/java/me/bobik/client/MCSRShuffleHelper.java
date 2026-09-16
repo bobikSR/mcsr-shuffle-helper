@@ -8,6 +8,8 @@ public class MCSRShuffleHelper implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        /*if (InGameTimer.getInstance().isCompleted())
+            completed = true;*/
         InGameTimer.onComplete(igt -> {
             completed = true;
                 }
