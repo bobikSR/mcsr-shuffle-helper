@@ -22,7 +22,8 @@
   ],
   "depends": {
     "fabricloader": ">=0.16.0",
-    "minecraft": "1.16.1"
+    "minecraft": "1.16.1",
+    "speedrunigt": ">=16.0"
   },
   "breaks": {
     "seedqueue": ">=1.0",
